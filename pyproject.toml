@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glulamshellpy"
+version = "0.1.0"
+description = "Abaqus-based parametric modelling and nonlinear analysis of glulam single-layer latticed shells with connector-based semi-rigid joints."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE.txt" }
+authors = [
+  { name = "TODO" }
+]
+dependencies = ["numpy", "matplotlib"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+exe = ["pyinstaller"]
+
+[project.scripts]
+glulamshellpy = "glulamshellpy.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["repo/src"]
