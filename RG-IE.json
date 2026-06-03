@@ -1,0 +1,173 @@
+{
+  "analysis": {
+    "analysis_type": "RIKS",
+    "initialArcInc": 0.01,
+    "initialInc": 0.01,
+    "maxArcInc": 0.05,
+    "maxInc": 0.05,
+    "maxNumInc": 300,
+    "minArcInc": 1e-07,
+    "minInc": 1e-07,
+    "nlgeom": true,
+    "numEigen": 10,
+    "totalArcLength": 1.0
+  },
+  "boundary": {
+    "bc_type": "FIX"
+  },
+  "geometry": {
+    "D": 24.0,
+    "f": 3.0,
+    "grid_type": "KIEWITT",
+    "include_bottom_ring_members": false,
+    "k": 6,
+    "m": 6,
+    "n_elem_per_member": 1,
+    "rigid_a": 0.12,
+    "rigid_b": 0.24,
+    "section_a": 0.12,
+    "section_b": 0.24,
+    "section_d": 0.18,
+    "section_t": 0.02,
+    "section_type": "RECT",
+    "stub_length_abs": 0.0,
+    "stub_ratio": 0.1
+  },
+  "imperfection": {
+    "boundary_zero": true,
+    "buckle_step": 1,
+    "imperfection_ratio": 0.002,
+    "imperfection_type": "GLOBAL_SAG",
+    "mode_number": 1,
+    "random_seed": 1,
+    "scale": 0.0
+  },
+  "joint": {
+    "behavior_input": {
+      "elastic": {},
+      "name": "SemiRigidJoint",
+      "nonlinear": {},
+      "rigid": [
+        "U1",
+        "U2",
+        "U3",
+        "UR1",
+        "UR2",
+        "UR3"
+      ]
+    },
+    "component_behaviors": [
+      {
+        "behavior": "RIGID",
+        "component": 1,
+        "dof": "U1",
+        "stiffness": 0.0
+      },
+      {
+        "behavior": "RIGID",
+        "component": 2,
+        "dof": "U2",
+        "stiffness": 0.0
+      },
+      {
+        "behavior": "RIGID",
+        "component": 3,
+        "dof": "U3",
+        "stiffness": 0.0
+      },
+      {
+        "behavior": "RIGID",
+        "component": 4,
+        "dof": "UR1",
+        "stiffness": 0.0
+      },
+      {
+        "behavior": "RIGID",
+        "component": 5,
+        "dof": "UR2",
+        "stiffness": 0.0
+      },
+      {
+        "behavior": "RIGID",
+        "component": 6,
+        "dof": "UR3",
+        "stiffness": 0.0
+      }
+    ],
+    "connector_mode": "NONLINEAR_ROT",
+    "curves": [],
+    "kr": [
+      200000.0,
+      800000.0,
+      300000.0
+    ],
+    "kt": [
+      1000000000000.0,
+      1000000000000.0,
+      1000000000000.0
+    ],
+    "section_name": "SemiRigidJoint",
+    "stiffness_input": "actual"
+  },
+  "load": {
+    "direction": "DOWN",
+    "load_type": "PROJECTED_PRESSURE",
+    "nodal_force": 0.0,
+    "q": 1000.0,
+    "target": "FREE",
+    "total_force": 0.0
+  },
+  "material": {
+    "density": 500.0,
+    "self_weight": false,
+    "wood_E": 12000000000.0,
+    "wood_E1": 12000000000.0,
+    "wood_E2": 600000000.0,
+    "wood_E3": 600000000.0,
+    "wood_G12": 750000000.0,
+    "wood_G13": 750000000.0,
+    "wood_G23": 80000000.0,
+    "wood_material_model": "ENGINEERING_CONSTANTS",
+    "wood_nu": 0.3,
+    "wood_nu12": 0.35,
+    "wood_nu13": 0.35,
+    "wood_nu23": 0.4
+  },
+  "member_imperfection": {
+    "member_imperfection_direction": "weak_axis",
+    "member_imperfection_num_elems": 16,
+    "member_imperfection_ratio": 150.0,
+    "member_imperfection_sign_mode": "same",
+    "member_imperfection_target": "all",
+    "random_seed": 2026,
+    "selected_member_ids": [],
+    "use_member_imperfection": true,
+    "write_member_imperfection_report": false
+  },
+  "output": {
+    "field": [
+      "U",
+      "RF",
+      "SF",
+      "SM",
+      "CTF",
+      "CEF",
+      "CUE"
+    ],
+    "history_apex": true,
+    "history_rf": false
+  },
+  "project": {
+    "abaqus_command": "abaqus",
+    "case_name": "RG-IE",
+    "memory_percent": 90,
+    "num_cpus": 1,
+    "open_output": false,
+    "postprocess": false,
+    "shell": false,
+    "submit_job": false,
+    "wait_for_completion": true,
+    "workdir": "F:\\Dome-APP\\glulam_dome_gui\\dist\\GlulamDomeGUI\\outputs",
+    "write_input": true
+  }
+}

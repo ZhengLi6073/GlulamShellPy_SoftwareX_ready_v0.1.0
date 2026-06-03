@@ -1,0 +1,298 @@
+{
+  "analysis": {
+    "analysis_type": "RIKS",
+    "initialArcInc": 0.01,
+    "initialInc": 0.01,
+    "maxArcInc": 0.05,
+    "maxInc": 0.05,
+    "maxNumInc": 300,
+    "minArcInc": 1e-07,
+    "minInc": 1e-07,
+    "nlgeom": true,
+    "numEigen": 10,
+    "totalArcLength": 1.0
+  },
+  "boundary": {
+    "bc_type": "FIX"
+  },
+  "geometry": {
+    "D": 6.0,
+    "f": 1.2,
+    "grid_type": "KIEWITT",
+    "include_bottom_ring_members": false,
+    "k": 6,
+    "m": 3,
+    "n_elem_per_member": 1,
+    "rigid_a": 0.05,
+    "rigid_b": 0.12,
+    "section_a": 0.05,
+    "section_b": 0.12,
+    "section_d": 0.18,
+    "section_t": 0.02,
+    "section_type": "RECT",
+    "stub_length_abs": 0.0,
+    "stub_ratio": 0.1
+  },
+  "imperfection": {
+    "boundary_zero": false,
+    "buckle_step": 1,
+    "imperfection_ratio": 0.02,
+    "imperfection_type": "BUCKLING_MODE",
+    "mode_number": 1,
+    "random_seed": 1,
+    "scale": 0.0
+  },
+  "joint": {
+    "behavior_input": {
+      "elastic": {
+        "UR3": 11250.0
+      },
+      "name": "SemiRigidJoint",
+      "nonlinear": {
+        "U1": [
+          [
+            -0.008,
+            -230000.0
+          ],
+          [
+            -0.0025,
+            -100000.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0025,
+            100000.0
+          ],
+          [
+            0.008,
+            230000.0
+          ]
+        ],
+        "UR2": [
+          [
+            -0.09,
+            -6500.0
+          ],
+          [
+            -0.045,
+            -4000.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.045,
+            4000.0
+          ],
+          [
+            0.09,
+            6500.0
+          ]
+        ]
+      },
+      "rigid": [
+        "U2",
+        "U3",
+        "UR1"
+      ]
+    },
+    "component_behaviors": [
+      {
+        "behavior": "NONLINEAR",
+        "component": 1,
+        "dof": "U1",
+        "stiffness": 0.0
+      },
+      {
+        "behavior": "RIGID",
+        "component": 2,
+        "dof": "U2",
+        "stiffness": 0.0
+      },
+      {
+        "behavior": "RIGID",
+        "component": 3,
+        "dof": "U3",
+        "stiffness": 0.0
+      },
+      {
+        "behavior": "RIGID",
+        "component": 4,
+        "dof": "UR1",
+        "stiffness": 0.0
+      },
+      {
+        "behavior": "NONLINEAR",
+        "component": 5,
+        "dof": "UR2",
+        "stiffness": 0.0
+      },
+      {
+        "behavior": "ELASTIC",
+        "component": 6,
+        "dof": "UR3",
+        "stiffness": 11250.0
+      }
+    ],
+    "connector_mode": "NONLINEAR_ROT",
+    "curves": [
+      {
+        "component": 1,
+        "dof": "U1",
+        "force_moment": -230000.0,
+        "moment": -230000.0,
+        "motion": -0.008,
+        "theta": -0.008
+      },
+      {
+        "component": 1,
+        "dof": "U1",
+        "force_moment": -100000.0,
+        "moment": -100000.0,
+        "motion": -0.0025,
+        "theta": -0.0025
+      },
+      {
+        "component": 1,
+        "dof": "U1",
+        "force_moment": 0.0,
+        "moment": 0.0,
+        "motion": 0.0,
+        "theta": 0.0
+      },
+      {
+        "component": 1,
+        "dof": "U1",
+        "force_moment": 100000.0,
+        "moment": 100000.0,
+        "motion": 0.0025,
+        "theta": 0.0025
+      },
+      {
+        "component": 1,
+        "dof": "U1",
+        "force_moment": 230000.0,
+        "moment": 230000.0,
+        "motion": 0.008,
+        "theta": 0.008
+      },
+      {
+        "component": 5,
+        "dof": "UR2",
+        "force_moment": -6500.0,
+        "moment": -6500.0,
+        "motion": -0.09,
+        "theta": -0.09
+      },
+      {
+        "component": 5,
+        "dof": "UR2",
+        "force_moment": -4000.0,
+        "moment": -4000.0,
+        "motion": -0.045,
+        "theta": -0.045
+      },
+      {
+        "component": 5,
+        "dof": "UR2",
+        "force_moment": 0.0,
+        "moment": 0.0,
+        "motion": 0.0,
+        "theta": 0.0
+      },
+      {
+        "component": 5,
+        "dof": "UR2",
+        "force_moment": 4000.0,
+        "moment": 4000.0,
+        "motion": 0.045,
+        "theta": 0.045
+      },
+      {
+        "component": 5,
+        "dof": "UR2",
+        "force_moment": 6500.0,
+        "moment": 6500.0,
+        "motion": 0.09,
+        "theta": 0.09
+      }
+    ],
+    "kr": [
+      200000.0,
+      800000.0,
+      300000.0
+    ],
+    "kt": [
+      1000000000000.0,
+      1000000000000.0,
+      1000000000000.0
+    ],
+    "section_name": "SemiRigidJoint",
+    "stiffness_input": "actual"
+  },
+  "load": {
+    "direction": "DOWN",
+    "load_type": "PROJECTED_PRESSURE",
+    "nodal_force": 0.0,
+    "q": 2000.0,
+    "target": "FREE",
+    "total_force": 0.0
+  },
+  "material": {
+    "density": 500.0,
+    "self_weight": false,
+    "wood_E": 12000000000.0,
+    "wood_E1": 12254000000.0,
+    "wood_E2": 499000000.0,
+    "wood_E3": 499000000.0,
+    "wood_G12": 1114000000.0,
+    "wood_G13": 1114000000.0,
+    "wood_G23": 18100000.0,
+    "wood_material_model": "ENGINEERING_CONSTANTS",
+    "wood_nu": 0.3,
+    "wood_nu12": 0.371,
+    "wood_nu13": 0.371,
+    "wood_nu23": 0.382
+  },
+  "member_imperfection": {
+    "member_imperfection_direction": "radial",
+    "member_imperfection_num_elems": 16,
+    "member_imperfection_ratio": 200.0,
+    "member_imperfection_sign_mode": "same",
+    "member_imperfection_target": "all",
+    "random_seed": 2026,
+    "selected_member_ids": [],
+    "use_member_imperfection": true,
+    "write_member_imperfection_report": true
+  },
+  "output": {
+    "field": [
+      "U",
+      "RF",
+      "SF",
+      "SM",
+      "CTF",
+      "CEF",
+      "CUE"
+    ],
+    "history_apex": true,
+    "history_rf": false
+  },
+  "project": {
+    "abaqus_command": "abaqus",
+    "case_name": "zhaojingxianUR1",
+    "memory_percent": 90,
+    "num_cpus": 8,
+    "open_output": false,
+    "postprocess": false,
+    "shell": false,
+    "submit_job": false,
+    "wait_for_completion": true,
+    "workdir": "F:\\Dome-APP\\glulam_dome_gui\\dist\\GlulamDomeGUI\\outputs",
+    "write_input": true
+  }
+}
