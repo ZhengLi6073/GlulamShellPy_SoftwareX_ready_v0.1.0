@@ -102,16 +102,6 @@ See `docs/reviewer_exe.md` for the reviewer executable build and use notes.
 
 See `docs/public_exe.md` for the public English executable build and use notes.
 
-## Limitations
-
-This release scaffold does not claim completed experimental validation, reliability analysis, or design standard calibration. Before submission, authors should add validated benchmark cases, error metrics, Abaqus version details, operating environment details, and complete result figures/tables for the manuscript.
-
-GitHub repository links, archived release links, reproducible capsule links, Zenodo DOI, manuscript identifiers, support email, C2, C3, and C9 remain `TBD` until the public release is created.
-
-## Citation
-
-Please use `CITATION.cff`. Repository and DOI fields are intentionally `TBD` until public archival release.
-
 ## License
 
 This English release uses the license in `LICENSE.txt`. No existing license file was detected in the Chinese source root, so MIT License is provided as the default placeholder. Authors must confirm copyright ownership and final license choice before submission.
