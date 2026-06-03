@@ -1,4 +1,3 @@
-# GlulamShellPy_SoftwareX_ready_v0.1.0
 # GlulamShellPy: Abaqus-Based Parametric Modelling of Glulam Single-Layer Latticed Shells with Semi-Rigid Joints
 
 GlulamShellPy is an English, GitHub-ready release scaffold for Abaqus-based parametric modelling and nonlinear analysis of glulam single-layer latticed shells with connector-based semi-rigid joints. The software targets spherical dome geometry, rigid joint hub regions, truncated member segments, zero-length `CONN3D2` connectors, local Cartesian/Cardan connector components, geometric imperfections, static/Riks/buckling analysis workflows, and CSV post-processing of Abaqus ODB results.
@@ -101,6 +100,10 @@ See `docs/reviewer_exe.md` for the reviewer executable build and use notes.
 ## Public EXE
 
 See `docs/public_exe.md` for the public English executable build and use notes.
+
+## Limitations
+
+This release claim completed experimental validation, reliability analysis, or design standard calibration. 
 
 ## License
 
